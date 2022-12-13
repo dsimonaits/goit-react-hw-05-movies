@@ -1,10 +1,19 @@
+import { DynamicFeed, Movie } from '@mui/icons-material';
 import axios from 'axios';
-
-axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 
 const API_KEY = '4c2c309e2c0263a8769257d39e3c269a';
 
-async function fetchTrendingMovies() {
+async function fetchMovies(url) {
   try {
-  } catch (error) {}
+    const response = await axios(url);
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export function fetchTrandingMovies() {
+  const trandingUrl = 'https://api.themoviedb.org/3/trending';
+
+  return fetchMovies(`${trandingUrl}/movie/day?api_key=${API_KEY}`);
 }
