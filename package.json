@@ -1,7 +1,7 @@
 {
   "name": "goit-react-hw-05-movies",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "https://dsimonaits.github.io/goit-react-hw-05-movies/",
   "dependencies": {
     "@emotion/react": "^11.10.5",
