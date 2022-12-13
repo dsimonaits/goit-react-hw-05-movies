@@ -5,7 +5,7 @@ const PageHeading = ({ text }) => {
   return <h1>{text}</h1>;
 };
 
-Section.propTypes = {
+PageHeading.propTypes = {
   text: PropTypes.string.isRequired,
 };
 
