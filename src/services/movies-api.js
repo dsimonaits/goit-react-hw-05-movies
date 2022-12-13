@@ -1,4 +1,3 @@
-import { DynamicFeed, Movie } from '@mui/icons-material';
 import axios from 'axios';
 
 const API_KEY = '4c2c309e2c0263a8769257d39e3c269a';
