@@ -7,7 +7,7 @@ const MovieDetailsCard = ({ movie }) => {
   return (
     <>
       <div>
-        <img src={imageUrl + backdrop_path}></img>
+        <img src={imageUrl + backdrop_path} alt={original_title}></img>
         <div>
           <h2>{original_title}</h2>
           <ul>
