@@ -5,24 +5,24 @@ import PageHeading from 'components/PageHeading/PageHeading';
 import MoviesList from 'components/MoviesList/MoviesList';
 
 const Home = () => {
-  const [trandingMovies, setTrandingMovies] = useState([]);
+  const [trendingMovies, setTrendingMovies] = useState([]);
 
   useEffect(() => {
-    const fetchTrandingMovies = () =>
+    const trendingMovies = () =>
       moviesApi
-        .fetchTrandingMovies()
-        .then(({ results }) => setTrandingMovies(results))
+        .fetchTrendingMovies()
+        .then(({ results }) => setTrendingMovies(results))
         .catch(error => console.log(error))
         .finally();
 
-    fetchTrandingMovies();
+    trendingMovies();
   }, []);
 
   return (
     <>
       <Section>
         <PageHeading text="Day`s Top" />
-        <MoviesList movies={trandingMovies} />
+        <MoviesList movies={trendingMovies} />
       </Section>
     </>
   );
