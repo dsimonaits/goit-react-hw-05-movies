@@ -1,13 +1,16 @@
 const MovieDetailsCard = ({ movie }) => {
-  console.log(movie);
-  const { backdrop_path, original_title, popularity, overview, genres } = movie;
+  const { poster_path, original_title, popularity, overview, genres } = movie;
   const movieGenres = genres.map(genre => genre.name).join(', ');
 
   const imageUrl = 'https://image.tmdb.org/t/p/w500/';
   return (
     <>
       <div>
-        <img src={imageUrl + backdrop_path} alt={original_title}></img>
+        <img
+          src={imageUrl + poster_path}
+          alt={original_title}
+          width="300"
+        ></img>
         <div>
           <h2>{original_title}</h2>
           <ul>
@@ -17,8 +20,8 @@ const MovieDetailsCard = ({ movie }) => {
               <p>{overview}</p>
             </li>
             <li>
-              <h4>{movieGenres}</h4>
-              <p></p>
+              <h4>Genres</h4>
+              <p>{movieGenres}</p>
             </li>
           </ul>
         </div>
