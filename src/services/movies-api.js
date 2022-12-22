@@ -30,11 +30,39 @@ export async function fetchMovieDetails(movieId) {
   }
 }
 
+export async function fetchMovieReviews(movieId, page = '1') {
+  try {
+    const response = await axios(`movie/${movieId}/reviews`, {
+      params: {
+        api_key: API_KEY,
+        page,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export async function fetchMovieCast(movieId) {
   try {
     const response = await axios(`movie/${movieId}/credits`, {
       params: {
         api_key: API_KEY,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function fetchMovieByQuery(query) {
+  try {
+    const response = await axios(`search/movie/`, {
+      params: {
+        api_key: API_KEY,
+        query,
       },
     });
     return response.data;
