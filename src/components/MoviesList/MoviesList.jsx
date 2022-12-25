@@ -1,10 +1,11 @@
 import MovieCard from 'components/MovieCard/MovieCard';
+import { MoviesListStyled } from './MoviesList.styled';
 
 const MoviesList = ({ movies }) => {
   return (
-    <ul>
+    <MoviesListStyled>
       <MovieCard movies={movies} />
-    </ul>
+    </MoviesListStyled>
   );
 };
 
