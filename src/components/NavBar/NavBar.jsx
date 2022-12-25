@@ -1,17 +1,27 @@
-import { NavLink } from 'react-router-dom';
+import Container from 'components/Container/Container';
+import {
+  Logo,
+  Nav,
+  NavList,
+  NavListItem,
+  NavLinkStyled,
+} from './NavBar.styled';
 
 function NavBar() {
   return (
-    <nav>
-      <ul>
-        <li>
-          <NavLink to="/">Home</NavLink>
-        </li>
-        <li>
-          <NavLink to="/movies">Movies</NavLink>
-        </li>
-      </ul>
-    </nav>
+    <Container>
+      <Nav>
+        <Logo />
+        <NavList>
+          <NavListItem>
+            <NavLinkStyled to="/">Home</NavLinkStyled>
+          </NavListItem>
+          <NavListItem>
+            <NavLinkStyled to="/movies">Movies</NavLinkStyled>
+          </NavListItem>
+        </NavList>
+      </Nav>
+    </Container>
   );
 }
 
