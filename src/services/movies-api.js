@@ -59,7 +59,7 @@ export async function fetchMovieCast(movieId) {
 
 export async function fetchMovieByQuery(query) {
   try {
-    const response = await axios(`search/movie/`, {
+    const response = await axios(`search/movie`, {
       params: {
         api_key: API_KEY,
         query,
@@ -70,3 +70,7 @@ export async function fetchMovieByQuery(query) {
     console.log(error);
   }
 }
+
+// http://api.themoviedb.org/3/search/movie?api_key=4c2c309e2c0263a8769257d39e3c269a&query=images
+
+// http://api.themoviedb.org/3/search/movie/?api_key=4c2c309e2c0263a8769257d39e3c269a&query=images
