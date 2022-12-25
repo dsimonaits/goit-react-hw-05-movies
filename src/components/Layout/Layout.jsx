@@ -1,14 +1,21 @@
 import { Outlet } from 'react-router-dom';
+import { Suspense } from 'react';
 import NavBar from 'components/NavBar/NavBar';
+import { Header } from './Layout.styled';
+import Footer from 'components/Footer/Footer';
+import ScrollToTop from 'components/ScrollToTop/ScrollToTop';
 
 function Layout() {
   return (
     <>
-      <header>{<NavBar />}</header>
+      <Header>{<NavBar />}</Header>
       <main>
-        <Outlet></Outlet>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Outlet></Outlet>
+        </Suspense>
+        <ScrollToTop />
       </main>
-      <footer>footer</footer>
+      <Footer></Footer>
     </>
   );
 }
