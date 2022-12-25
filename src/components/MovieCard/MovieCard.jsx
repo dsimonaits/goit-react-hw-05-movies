@@ -1,20 +1,24 @@
 import { Link, useLocation } from 'react-router-dom';
+import { MovieCardItem } from './MovieCard.styled';
+import { MovieTitle } from './MovieCard.styled';
+import { MovieImg } from './MovieCard.styled';
+import { noImage } from 'images/noImage';
 
 const MovieCard = ({ movies }) => {
   const location = useLocation();
-  console.log(movies);
-
-  const imagesUrl = 'https://image.tmdb.org/t/p/w500/';
-
-  const noImage =
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/495px-No-Image-Placeholder.svg.png?20200912122019';
+  const imageUrl = 'https://image.tmdb.org/t/p/w500/';
   return (
     movies && (
       <>
         {movies.map(({ id, poster_path, name, title, overview }) => {
+          let movieName = name ?? title;
+          // if (movieName.length > 19) {
+          //   movieName = movieName.substring(0, 19) + '...';
+          // }
+
           const idToString = id.toString();
           return (
-            <li key={id}>
+            <MovieCardItem key={id}>
               <Link
                 to={
                   location.pathname === '/movies'
@@ -23,14 +27,14 @@ const MovieCard = ({ movies }) => {
                 }
                 state={{ from: location }}
               >
-                <h2>{name ?? title}</h2>
-                <img
+                <MovieImg
                   width="200"
-                  src={!poster_path ? noImage : imagesUrl + poster_path}
+                  src={!poster_path ? noImage : imageUrl + poster_path}
                   alt={name}
                 />
+                <MovieTitle>{movieName}</MovieTitle>
               </Link>
-            </li>
+            </MovieCardItem>
           );
         })}
       </>
