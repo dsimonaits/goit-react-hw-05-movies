@@ -1,3 +1,5 @@
 import styled from 'styled-components';
 
-export const HeadingH1 = styled.h1``;
+export const Heading = styled.h2`
+  margin-bottom: 20px;
+`;
