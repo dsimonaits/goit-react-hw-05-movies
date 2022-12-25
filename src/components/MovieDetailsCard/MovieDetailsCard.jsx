@@ -1,6 +1,11 @@
+import { useLocation } from 'react-router-dom';
+
 const MovieDetailsCard = ({ movie }) => {
   const { poster_path, original_title, popularity, overview, genres } = movie;
   const movieGenres = genres.map(genre => genre.name).join(', ');
+
+  const location = useLocation();
+  console.log(location);
 
   const imageUrl = 'https://image.tmdb.org/t/p/w500/';
   return (
