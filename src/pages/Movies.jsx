@@ -1,5 +1,5 @@
 // import { useState, useEffect } from 'react';
-import { useSearchParams, useLocation } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import useFetchMoviesByName from 'Hooks/useFetchByQuery';
 import MoviesList from 'components/MoviesList/MoviesList';
 
@@ -7,9 +7,6 @@ function Movies() {
   /* eslint-disable */
   const [_, setSearchParams] = useSearchParams();
   /* eslint-enable */
-
-  const location = useLocation();
-  console.log(location);
 
   const handleSubmit = e => {
     e.preventDefault();
