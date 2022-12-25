@@ -1,4 +1,5 @@
 import useFetchReviews from 'Hooks/useFetchReviews';
+import ReviewsList from 'components/ReviewsLIst/ReviewsList';
 
 const Reviews = () => {
   const reviews = useFetchReviews();
@@ -7,16 +8,7 @@ const Reviews = () => {
     (reviews.results.length === 0 ? (
       <p>There is no reviews yet!</p>
     ) : (
-      <ul>
-        {reviews.results.map(({ author, content, id }) => {
-          return (
-            <li key={id}>
-              <h3>{author}</h3>
-              <p>{content}</p>
-            </li>
-          );
-        })}
-      </ul>
+      <ReviewsList data={reviews} />
     ))
   );
 };
