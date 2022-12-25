@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
-import { HeadingH1 } from './PageHeading.styled';
+import { Heading } from './PageHeading.styled';
 
 const PageHeading = ({ text }) => {
-  return <HeadingH1>{text}</HeadingH1>;
+  return <Heading>{text}</Heading>;
 };
 
 PageHeading.propTypes = {
