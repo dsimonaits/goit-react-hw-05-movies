@@ -14,7 +14,9 @@ const useFetchMoviesByName = () => {
       firstRender.current = false;
       return;
     }
+  });
 
+  useEffect(() => {
     if (query === null || query === '') return;
 
     fetchMovieByQuery(query).then(setMovies);
