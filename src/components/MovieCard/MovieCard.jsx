@@ -14,21 +14,23 @@ const MovieCard = ({ movies }) => {
         {movies.map(({ id, poster_path, name, title, overview }) => {
           const idToString = id.toString();
           return (
-            <Link
-              key={id}
-              to={
-                location.pathname === '/movies'
-                  ? `${idToString}`
-                  : `movies/${idToString}`
-              }
-            >
-              <h2>{name ?? title}</h2>
-              <img
-                width="200"
-                src={!poster_path ? noImage : imagesUrl + poster_path}
-                alt={name}
-              />
-            </Link>
+            <li key={id}>
+              <Link
+                to={
+                  location.pathname === '/movies'
+                    ? `${idToString}`
+                    : `movies/${idToString}`
+                }
+                state={{ from: location }}
+              >
+                <h2>{name ?? title}</h2>
+                <img
+                  width="200"
+                  src={!poster_path ? noImage : imagesUrl + poster_path}
+                  alt={name}
+                />
+              </Link>
+            </li>
           );
         })}
       </>
