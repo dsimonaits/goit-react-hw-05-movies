@@ -1,5 +1,6 @@
 import { noImage } from 'images/noImage';
 import { ActorListStyled, ActorLIstItem } from './ActorList.styled';
+import PropTypes from 'prop-types';
 
 const ActorList = ({ data }) => {
   const imageUrl = 'https://image.tmdb.org/t/p/w500/';
@@ -7,6 +8,7 @@ const ActorList = ({ data }) => {
     <ActorListStyled>
       <>
         {data.cast.map(({ profile_path, name, character, id }) => {
+          console.log(data);
           const actorPhoto = !profile_path ? noImage : imageUrl + profile_path;
           return (
             <ActorLIstItem key={id}>
@@ -24,3 +26,9 @@ const ActorList = ({ data }) => {
   );
 };
 export default ActorList;
+
+ActorList.propTypes = {
+  data: PropTypes.object,
+};
+
+// PropTypes.arrayOf(PropTypes.shape).isRequired,
