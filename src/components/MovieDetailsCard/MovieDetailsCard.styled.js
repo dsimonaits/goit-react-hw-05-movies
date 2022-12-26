@@ -14,7 +14,12 @@ export const MovieIMg = styled.img`
 export const MovieDetailsWrapper = styled.div``;
 
 export const Title = styled.h3`
+  margin-top: 10px;
   margin-bottom: 10px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 0px;
+  }
 `;
 
 export const UserScore = styled.p`
