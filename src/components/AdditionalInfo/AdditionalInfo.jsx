@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import {
   InfoList,
   InfoItems,
@@ -26,3 +27,7 @@ const AdditionaLInfo = ({ mainState }) => {
 };
 
 export default AdditionaLInfo;
+
+AdditionaLInfo.propTypes = {
+  mainState: PropTypes.object.isRequired,
+};
