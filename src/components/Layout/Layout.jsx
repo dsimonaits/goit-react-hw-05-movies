@@ -10,7 +10,7 @@ function Layout() {
     <>
       <Header>{<NavBar />}</Header>
       <main>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense>
           <Outlet></Outlet>
         </Suspense>
         <ScrollToTop />
