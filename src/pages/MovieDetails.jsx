@@ -8,7 +8,7 @@ import { BsArrow90DegLeft } from 'react-icons/bs';
 const MovieDetails = () => {
   const movieDetails = useFetchDetails();
   const location = useLocation();
-  const mainLocationState = location.state.from;
+  // const mainLocationState = location.state.from;
   const backLinkHref = location.state?.from ?? '/home';
 
   const backLinkStyle = {
@@ -28,10 +28,7 @@ const MovieDetails = () => {
           Go Back
         </Link>
         {movieDetails && (
-          <MovieDetailsCard
-            movie={movieDetails}
-            mainState={mainLocationState}
-          />
+          <MovieDetailsCard movie={movieDetails} mainState={backLinkHref} />
         )}
       </Container>
     </Section>
