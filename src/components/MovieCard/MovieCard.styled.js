@@ -23,5 +23,7 @@ export const MovieTitle = styled.h3`
 `;
 
 export const MovieImg = styled.img`
+  min-width: 200px;
+  min-height: 300px;
   border-radius: 15px;
 `;
