@@ -10,6 +10,7 @@ Container.propTypes = {
     PropTypes.arrayOf(PropTypes.element),
     PropTypes.element,
   ]).isRequired,
+  height: PropTypes.string,
 };
 
 export default Container;
