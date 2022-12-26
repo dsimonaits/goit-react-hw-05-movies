@@ -8,7 +8,6 @@ const ActorList = ({ data }) => {
     <ActorListStyled>
       <>
         {data.cast.map(({ profile_path, name, character, id }) => {
-          console.log(data);
           const actorPhoto = !profile_path ? noImage : imageUrl + profile_path;
           return (
             <ActorLIstItem key={id}>
@@ -28,7 +27,5 @@ const ActorList = ({ data }) => {
 export default ActorList;
 
 ActorList.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.object.isRequired,
 };
-
-// PropTypes.arrayOf(PropTypes.shape).isRequired,
