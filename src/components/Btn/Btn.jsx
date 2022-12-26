@@ -1,8 +1,10 @@
-function Btn({ text, onclickHandler }) {
+import { BtnStyled } from './Btn.styled';
+
+function Btn({ text, onclickHandler, display }) {
   return (
-    <button type="button" onClick={onclickHandler}>
+    <BtnStyled type="button" onClick={onclickHandler}>
       {text}
-    </button>
+    </BtnStyled>
   );
 }
 
