@@ -10,21 +10,18 @@ export const InfoList = styled.ul`
 `;
 
 export const InfoItems = styled.li`
-  margin-top: 10px;
   margin-bottom: 5px;
 `;
 
 export const InfoLink = styled(NavLink)`
   display: flex;
   padding: 5px;
-  /* outline: 1px solid white;
-  border-radius: 10px; */
 
   &:hover {
-    color: red;
+    color: #c61212;
   }
 
   &.active {
-    color: red;
+    color: #c61212;
   }
 `;
