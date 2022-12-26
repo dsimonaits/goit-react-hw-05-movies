@@ -3,18 +3,19 @@ import { MovieCardItem } from './MovieCard.styled';
 import { MovieTitle } from './MovieCard.styled';
 import { MovieImg } from './MovieCard.styled';
 import { noImage } from 'images/noImage';
-
+import PropTypes from 'prop-types';
 const MovieCard = ({ movies }) => {
+  // const [imageLoaded, setImageLoaded] = useState(false);
   const location = useLocation();
   const imageUrl = 'https://image.tmdb.org/t/p/w500/';
+
   return (
     movies && (
       <>
         {movies.map(({ id, poster_path, name, title, overview }) => {
           let movieName = name ?? title;
-          // if (movieName.length > 19) {
-          //   movieName = movieName.substring(0, 19) + '...';
-          // }
+
+          const imgSrc = !poster_path ? noImage : imageUrl + poster_path;
 
           const idToString = id.toString();
           return (
@@ -27,11 +28,7 @@ const MovieCard = ({ movies }) => {
                 }
                 state={{ from: location }}
               >
-                <MovieImg
-                  width="200"
-                  src={!poster_path ? noImage : imageUrl + poster_path}
-                  alt={name}
-                />
+                <MovieImg width="200" src={imgSrc} alt={name} loading="lazy" />
                 <MovieTitle>{movieName}</MovieTitle>
               </Link>
             </MovieCardItem>
@@ -43,3 +40,7 @@ const MovieCard = ({ movies }) => {
 };
 
 export default MovieCard;
+
+MovieCard.propTypes = {
+  movies: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
+};
