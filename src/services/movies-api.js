@@ -58,12 +58,13 @@ export async function fetchMovieCast(movieId) {
   }
 }
 
-export async function fetchMovieByQuery(query) {
+export async function fetchMovieByQuery(query, page) {
   try {
     const response = await axios(`search/movie`, {
       params: {
         api_key: API_KEY,
         query,
+        page,
       },
     });
     return response.data;
