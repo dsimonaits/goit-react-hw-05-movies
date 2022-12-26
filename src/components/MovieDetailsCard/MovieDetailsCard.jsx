@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { noImage } from 'images/noImage';
 import AdditionaLInfo from 'components/AdditionalInfo/AdditionalInfo';
 import { Outlet } from 'react-router-dom';
@@ -23,6 +24,7 @@ const MovieDetailsCard = ({ movie, mainState }) => {
           src={!poster_path ? noImage : imageUrl + poster_path}
           alt={original_title}
           width="300px"
+          loading="lazy"
         ></MovieIMg>
         <MovieDetailsWrapper>
           <Title>{original_title}</Title>
@@ -49,3 +51,8 @@ const MovieDetailsCard = ({ movie, mainState }) => {
 };
 
 export default MovieDetailsCard;
+
+MovieDetailsCard.propTypes = {
+  movie: PropTypes.object.isRequired,
+  mainState: PropTypes.object.isRequired,
+};
